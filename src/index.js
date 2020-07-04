@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import RichTextEditor from './RichTextEditor/RichTextEditor';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <RichTextEditor/>
   </React.StrictMode>,
   document.getElementById('root')
 );
