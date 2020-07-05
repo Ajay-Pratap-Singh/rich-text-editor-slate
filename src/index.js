@@ -4,9 +4,13 @@ import './index.css';
 import RichTextEditor from './RichTextEditor/RichTextEditor';
 import * as serviceWorker from './serviceWorker';
 
+const passItHere=(value)=>{
+  console.log(JSON.stringify(value));
+}
+
 ReactDOM.render(
   <React.StrictMode>
-    <RichTextEditor body={'[{"type":"paragraph","children":[{"text":""}]}]'}/>
+    <RichTextEditor body={'[{"type":"paragraph","children":[{"text":""}]}]'} onChange={passItHere}/>
   </React.StrictMode>,
   document.getElementById('root')
 );

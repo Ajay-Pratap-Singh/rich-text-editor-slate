@@ -16,13 +16,13 @@ const HOTKEYS = {
 const LIST_TYPES = ['numbered-list', 'bulleted-list']
 
 const RichTextEditor = (props) => {
-  const [value, setValue] = useState(initialValue)
+  const [value, setValue] = useState(JSON.parse(props.body))
   const renderElement = useCallback(props => <Element {...props} />, [])
   const renderLeaf = useCallback(props => <Leaf {...props} />, [])
   const editor = useMemo(() => withHistory(withReact(createEditor())), [])
 
   return (
-    <Slate editor={editor} value={JSON.parse(props.body)} onChange={value => setValue(value)}>
+    <Slate editor={editor} value={value} onChange={value => {setValue(value);props.onChange(value)}}>
       <Toolbar>
         <MarkButton format="bold" icon="format_bold" />
         <MarkButton format="italic" icon="format_italic" />
