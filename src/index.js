@@ -6,7 +6,7 @@ import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
   <React.StrictMode>
-    <RichTextEditor/>
+    <RichTextEditor body={'[{"type":"paragraph","children":[{"text":""}]}]'}/>
   </React.StrictMode>,
   document.getElementById('root')
 );
