@@ -2,15 +2,20 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import RichTextEditor from './RichTextEditor/RichTextEditor';
+import EditorJs from 'react-editor-js';
+import Example from './ExampleJodit';
 import * as serviceWorker from './serviceWorker';
 
 const passItHere=(value)=>{
-  console.log(JSON.stringify(value));
+  console.log(value);
 }
 
 ReactDOM.render(
+
   <React.StrictMode>
-    <RichTextEditor body={'[{"type":"paragraph","children":[{"text":""}]}]'} onChange={passItHere}/>
+  {/*<EditorJs onChange={(e,d)=>{console.log(d)}}/>;*/}
+  <Example/>;
+    {/*<RichTextEditor body={'[{"type":"paragraph","children":[{"text":""}]}]'} onChange={passItHere}/>*/}
   </React.StrictMode>,
   document.getElementById('root')
 );

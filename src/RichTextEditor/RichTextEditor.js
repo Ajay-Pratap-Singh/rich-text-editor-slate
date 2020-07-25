@@ -22,7 +22,7 @@ const RichTextEditor = (props) => {
   const editor = useMemo(() => withHistory(withReact(createEditor())), [])
 
   return (
-    <Slate editor={editor} value={value} onChange={value => {setValue(value);props.onChange(value)}}>
+    <Slate editor={editor} value={value} onChange={value => {setValue(value);props.onChange(JSON.stringify(value))}}>
       <Toolbar>
         <MarkButton format="bold" icon="format_bold" />
         <MarkButton format="italic" icon="format_italic" />
